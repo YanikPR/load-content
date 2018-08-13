@@ -6,7 +6,6 @@ let url = "./partials/home.html";
 
 // CREATE THE FUNCTION THAT WILL LOAD THE REQUESTED PARTIAL
 function loadContent(url) {
-    // RUN THE fetch(urlFeed).then().then().catch()
     fetch(url)
         .then(function (response) {
             console.log(response);
@@ -30,12 +29,12 @@ function handleLink(e) {
     // PREVENT DEFAULT BEHAVIOUR OF A LINK TAG
     e.preventDefault();
     // GET THE VALUE OF href ATTRIBUTE OF THE CLICKED LINK
-    let hrefSplit = e.target.href.split("/");
-    let newUrl = "./partials/" + hrefSplit[hrefSplit.length - 1];
+    let hrefVal = e.target.href.split("/");
+    let urlNew = "./partials/" + hrefSplit[hrefSplit.length - 1];
     // CALL THE FUNCTION loadContent PROVIDING THE href
     // VALUE OF THE CLICKED LINK AS THE VALUE FOR THE PARAMETER
     // OF loadContent FUNCTION.
-    loadContent(newUrl);
+    loadContent(urlNew);
 }
 
 // REGISTER links FOR CLICK EVENT WITH selectContent AS EVENT HANDLER!
